@@ -12,13 +12,32 @@ b.	Setting goals [2]
 
 ## Backend
 Python 3 and Django 2.0
+Create Virtual Environment and Install Dependencies
+```
+/> virtualenv env
+/> source env/bin/activate
+/> pip install -r requirements.txt
 ```
 
+Create the local database
+```
+/> cd backend
+/> python manage.py migrate
 ```
 
-ES6 and React with Redux
+Serve the backend up
+```
+/> cd backend
+/> python manage.py runserver 0.0.0.0:8000
+```
+
+Angular
 ## Frontend
-
+Serve the frontend
+```
+/> cd ng-mooc-time
+/> ng serve --open
+```
 
 ## Various TODO items
 - [ ] Add estimated time to work items (user will select, sm, md, lg, xl)
