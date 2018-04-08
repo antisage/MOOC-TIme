@@ -9,3 +9,16 @@ The application will assist users with
 4.	Teaching productivity via various methods
 a.	Task execution via intervals (commonly referred to as the “Pomodoro” technique
 b.	Setting goals [2]
+
+## Backend
+Python 3 and Django 2.0
+```
+
+```
+
+ES6 and React with Redux
+## Frontend
+
+
+## Various TODO items
+- [ ] Add estimated time to work items (user will select, sm, md, lg, xl)

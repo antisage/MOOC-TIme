@@ -1,0 +1,62 @@
+<h1>
+  Let's get some information about your course
+</h1>
+<div>
+<form>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="courseName">Course Name</label>
+      <input #courseName type="text" class="form-control" id="courseName" placeholder="Educational Technology">
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-3">
+      <label for="courseCode">Course Code</label>
+      <input #courseCode type="text" class="form-control" id="courseCode" placeholder="CS6460">
+    </div>
+  </div>
+
+  <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="startDate">Start Date</label>
+        <div class="input-group" id="startDate">
+          <input class="form-control" placeholder="yyyy-mm-dd"
+                  name="dp" [(ngModel)]="startDate" ngbDatepicker #d="ngbDatepicker">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">
+              <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="endDate">End Date</label>
+        <div class="input-group" id="endDate">
+          <input class="form-control" placeholder="yyyy-mm-dd"
+                  name="dp2" [(ngModel)]="endDate" ngbDatepicker #d2="ngbDatepicker">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" (click)="d2.toggle()" type="button">
+              <img src="img/calendar-icon.svg" style="width: 1.2rem; height: 1rem; cursor: pointer;"/>
+            </button>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="courseUrl">Course Calendar URL TODO: ADD DIRECTIONS</label>
+        <input #courseUrl type="text" class="form-control" id="courseUrl" placeholder="http://canvas.gatech.edu.....">
+      </div>
+    </div>
+</form>
+
+  <button (click)="add(courseName.value, courseCode.value, courseUrl.value);" 
+    class="btn btn-primary">
+    Next
+  </button>
+</div>
+
+{{ result }}
