@@ -1,0 +1,136 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+METHOD:PUBLISH
+X-WR-CALDESC:Calendar events for the user\, Alexander Thys Dykstra
+X-WR-CALNAME:Alexander Thys Dykstra Calendar (Canvas)
+CALSCALE:GREGORIAN
+PRODID:iCalendar-Ruby
+BEGIN:VEVENT
+DESCRIPTION:Full assignment instructions can be found on [this page of the 
+ course web site](http://omscs6460.gatech.edu/spring-2018/intermediate-miles
+ tones/).
+DTEND:20180319T115900Z
+DTSTAMP:20180408T170200Z
+DTSTART:20180319T115900Z
+CLASS:PUBLIC
+SEQUENCE:0
+SUMMARY:Intermediate Milestone 1 [CS6460]
+UID:event-assignment-20676
+URL:http://gatech.instructure.com/calendar?include_contexts=course_8700&mon
+ th=03&year=2018#assignment_20676
+X-ALT-DESC;FMTTYPE=text/html:<p>Full assignment instructions can be found o
+ n <a href="http://omscs6460.gatech.edu/spring-2018/intermediate-milestones/
+ ">this page of the course web site</a>.</p>
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Full assignment instructions can be found on [this page of the 
+ course web site](http://omscs6460.gatech.edu/spring-2018/intermediate-miles
+ tones/).
+DTEND:20180409T115900Z
+DTSTAMP:20180408T175200Z
+DTSTART:20180409T115900Z
+CLASS:PUBLIC
+SEQUENCE:0
+SUMMARY:Intermediate Milestone 2 [CS6460]
+UID:event-assignment-6258
+URL:http://gatech.instructure.com/calendar?include_contexts=course_8700&mon
+ th=04&year=2018#assignment_6258
+X-ALT-DESC;FMTTYPE=text/html:<p>Full assignment instructions can be found o
+ n <a href="http://omscs6460.gatech.edu/spring-2018/intermediate-milestones/
+ ">this page of the course web site</a>.</p>
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Full information about weekly status checks can be found on [th
+ is page on the course web site](http://omscs6460.gatech.edu/spring-2018/wee
+ kly-status-checks/).\n\nYou do not need to submit anything to Canvas for we
+ ekly status checks\; instead\, you should post your status checks to your m
+ entor thread\, and the points for them will be recorded here. The total lis
+ ted here may not be updated until the last week of the semester\, but you m
+ ay ask your mentor for an update at any time.
+DTEND:20180423T115900Z
+DTSTAMP:20180319T103700Z
+DTSTART:20180423T115900Z
+CLASS:PUBLIC
+SEQUENCE:0
+SUMMARY:Weekly Status Checks [CS6460]
+UID:event-assignment-6254
+URL:http://gatech.instructure.com/calendar?include_contexts=course_8700&mon
+ th=04&year=2018#assignment_6254
+X-ALT-DESC;FMTTYPE=text/html:<p>Full information about weekly status checks
+  can be found on <a href="http://omscs6460.gatech.edu/spring-2018/weekly-st
+ atus-checks/">this page on the course web site</a>.</p>\n<p>You do not need
+  to submit anything to Canvas for weekly status checks\; instead\, you shou
+ ld post your status checks to your mentor thread\, and the points for them 
+ will be recorded here. The total listed here may not be updated until the l
+ ast week of the semester\, but you may ask your mentor for an update at any
+  time.</p>
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Full assignment instructions can be found on [this page of the 
+ course web site](http://omscs6460.gatech.edu/spring-2018/final-project/).
+DTEND:20180430T115900Z
+DTSTAMP:20180315T221500Z
+DTSTART:20180430T115900Z
+CLASS:PUBLIC
+SEQUENCE:0
+SUMMARY:Final Project [CS6460]
+UID:event-assignment-6259
+URL:http://gatech.instructure.com/calendar?include_contexts=course_8700&mon
+ th=04&year=2018#assignment_6259
+X-ALT-DESC;FMTTYPE=text/html:<p>Full assignment instructions can be found o
+ n <a href="http://omscs6460.gatech.edu/spring-2018/final-project/">this pag
+ e of the course web site</a>.</p>
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Full assignment instructions can be found on [this page of the 
+ course web site](http://omscs6460.gatech.edu/spring-2018/final-project/).
+DTEND:20180430T115900Z
+DTSTAMP:20180315T221500Z
+DTSTART:20180430T115900Z
+CLASS:PUBLIC
+SEQUENCE:0
+SUMMARY:Project Paper [CS6460]
+UID:event-assignment-6260
+URL:http://gatech.instructure.com/calendar?include_contexts=course_8700&mon
+ th=04&year=2018#assignment_6260
+X-ALT-DESC;FMTTYPE=text/html:<p>Full assignment instructions can be found o
+ n <a href="http://omscs6460.gatech.edu/spring-2018/final-project/">this pag
+ e of the course web site</a>.</p>
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Full assignment instructions can be found on [this page of the 
+ course web site](http://omscs6460.gatech.edu/spring-2018/final-project/).
+DTEND:20180430T115900Z
+DTSTAMP:20180315T221500Z
+DTSTART:20180430T115900Z
+CLASS:PUBLIC
+SEQUENCE:0
+SUMMARY:Project Presentation [CS6460]
+UID:event-assignment-6261
+URL:http://gatech.instructure.com/calendar?include_contexts=course_8700&mon
+ th=04&year=2018#assignment_6261
+X-ALT-DESC;FMTTYPE=text/html:<p>Full assignment instructions can be found o
+ n <a href="http://omscs6460.gatech.edu/spring-2018/final-project/">this pag
+ e of the course web site</a>.</p>
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:For information on class participation\, see [this page from th
+ e course web site](http://omscs6460.gatech.edu/spring-2018/class-participat
+ ion/).\n\nYour grade for this section will be updated three times throughou
+ t the semester\, in weeks 6\, 12\, and 17.
+DTEND;VALUE=DATE:20180504
+DTSTAMP:20180328T221300Z
+DTSTART;VALUE=DATE:20180504
+CLASS:PUBLIC
+SEQUENCE:0
+SUMMARY:Class Participation [CS6460]
+UID:event-assignment-6262
+URL:http://gatech.instructure.com/calendar?include_contexts=course_8700&mon
+ th=05&year=2018#assignment_6262
+X-ALT-DESC;FMTTYPE=text/html:<p>For information on class participation\, se
+ e <a class="external" href="http://omscs6460.gatech.edu/spring-2018/class-p
+ articipation/" target="_blank">this page from the course web site</a>.</p>\
+ n<p>Your grade for this section will be updated three times throughout the 
+ semester\, in weeks 6\, 12\, and 17.</p>
+END:VEVENT
+END:VCALENDAR
