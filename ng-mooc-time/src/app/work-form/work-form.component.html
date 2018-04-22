@@ -1,0 +1,56 @@
+<h1>Let's have a look at the assignments that will be due during this course</h1>
+
+<h2>Potential Assignments</h2>
+<div *ngIf="lastAdded" class="alert alert-success" role="alert">
+  Successfully added <a href="{{ lastAdded.url }}">{{ lastAdded.name }}</a> to your work items!
+</div>
+<div *ngFor="let work of possibleWork; let i = index">
+  <div class="card">
+    <div class="card-header">
+      <a href="{{ work.url }}">{{ work.name }}</a>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Due: {{ work.duedate | date }}</h5>
+      <p class="card-text">{{ work.description }}</p>
+      <!-- <a href="#" class="btn btn-primary">Schedule Sessions</a> -->
+      <div class="row">
+        <div class="col-sm">
+          <button type="button" class="btn btn-primary" (click)="showForm($event, i)">+ Add To My Work</button>
+        </div>
+      </div>
+      <div class="row" *ngIf="activeFormIndex == i">
+        <div class="col-sm">
+          <form #workForm="ngForm">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input disabled class="form-control" id="name" value="{{ addingWorkItem[i].name }}">
+              </div>
+              <div class="form-group">
+                <label for="worktype">Work Type</label>
+                <select class="form-control" id="worktype" [(ngModel)]="addingWorkItem[i].work_type" name="worktype">
+                  <option *ngFor="let type of workTypes" >{{ type }}</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="estimate">Size of Work Item</label>
+                <select class="form-control" id="estimate" [(ngModel)]="addingWorkItem[i].estimated_time" name="estimate">
+                  <option value="1" >Small</option>
+                  <option value="2" >Medium</option>
+                  <option value="4" >Large</option>
+                  <option value="6" >Extra Large</option>
+                  <option value="10" >Huge</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="description">Description</label>
+                <textarea name="description" [(ngModel)]="addingWorkItem[i].description" class="form-control" id="description" rows="3" value="{{ addingWorkItem[i].description }}"></textarea>
+              </div>
+              <button type="button" class="btn btn-success" (click)="addWork($event, i)">Done</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+</div>
+<button type="button" class="btn btn-success" (click)="finished()">Done Adding Work</button>

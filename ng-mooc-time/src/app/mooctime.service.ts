@@ -4,6 +4,8 @@ import { of } from 'rxjs/observable/of';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Course } from './course';
+import { Work } from './work';
+import { Session } from './session';
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -12,8 +14,10 @@ const httpOptions = {
 @Injectable()
 export class MooctimeService {
 
-  private apiBaseUrl = 'http://localhost:8000/api/'
-  private coursesUrl = 'courses/'
+  private apiBaseUrl = 'http://localhost:8000/api/';
+  private coursesUrl = 'courses/';
+  private workUrl = 'works/';
+  private sessionUrl = 'interval-sessions/';
 
   constructor(private http: HttpClient) { }
 
@@ -31,4 +35,39 @@ export class MooctimeService {
     }
     return this.http.post<Course>(this.apiBaseUrl + this.coursesUrl, serialCourse, httpOptions)
   }
+
+  getPossibleEvents(courseId: number): Observable<Work[]> {
+    return this.http.get<Work[]>(this.apiBaseUrl + 'course/calendar-events/' + courseId + '/')
+  }
+
+  getWork(): Observable<Work[]> {
+    return this.http.get<Work[]>(this.apiBaseUrl + this.workUrl);
+  }
+
+  addWork(work: Work): Observable<Work> {
+    const serialWork = {
+      name: work.name,
+      course: work.course,
+      work_type: work.work_type,
+      estimated_time: work.estimated_time,
+      description: work.description,
+      url: work.url,
+      due_date: work.duedate.toISOString().split('T')[0]
+    }
+    return this.http.post<Work>(this.apiBaseUrl + this.workUrl, serialWork, httpOptions);
+  }
+
+  getWorkList(courseId: Number): Observable<Work[]> {
+    return this.http.get<Work[]>(this.apiBaseUrl + this.workUrl + '?course_id=' + courseId);
+  }
+
+  addSession(session: Session): Observable<Session> {
+    const serialSession = {
+      work: session.work,
+      start: session.start.toISOString(),
+      end: session.end.toISOString()
+    }
+    return this.http.post<Session>(this.apiBaseUrl + this.sessionUrl, serialSession, httpOptions);
+  }
+
 }

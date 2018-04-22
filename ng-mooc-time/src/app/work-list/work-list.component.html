@@ -1,0 +1,20 @@
+<h1>You've Made It To The Final Step!</h1>
+<h2>Let's schedule some time for you to work on the following course items</h2>
+<div *ngFor="let item of work">
+    <div class="card text-center">
+      <div class="card-header">
+        Due: {{ item.due_date | date }}
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">{{ item.name }}</h5>
+        <p class="card-text">{{ item.description }}</p>
+        <p>We recommend scheduling at least {{ item.estimated_time * 2 }} hours to complete this task</p>
+        <button class="btn btn-primary" (click)="click($event, item.id)">Schedule sessions</button>
+        <app-scheduling-assistant *ngIf="editing == item.id" [workId]="item.id"></app-scheduling-assistant>
+      </div>
+      <div class="card-footer text-muted">
+        {{ item.due_date | countdown }} Days Until Due
+      </div>
+    </div>
+    <br>
+</div>

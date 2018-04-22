@@ -36,7 +36,11 @@ WORK_TYPE_CHOICES = (
 class Work(models.Model):
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
     work_type = models.CharField(max_length=25, choices=WORK_TYPE_CHOICES, default=WORK_TYPE_CHOICES[0][0])
-    due_date = models.DateTimeField()
+    estimated_time = models.IntegerField()
+    name = models.CharField(max_length=100, default='')
+    description = models.CharField(max_length=800, default='')
+    url = models.CharField(max_length=200, default='')
+    due_date = models.DateField()
 
 
 class IntervalSession(models.Model):

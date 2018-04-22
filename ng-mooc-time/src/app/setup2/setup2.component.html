@@ -1,0 +1,17 @@
+<h1>Let's have a look at the assignments that will be due during this course</h1>
+
+<h2>Potential Assignments</h2>
+<div *ngFor="let work of possibleWork">
+  <div class="card">
+    <div class="card-header">
+      {{ work.name }}
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{ work.duedate | date }}</h5>
+      <p class="card-text">{{ work.description }}</p>
+      <!-- <a href="#" class="btn btn-primary">Schedule Sessions</a> -->
+      <app-scheduling-assistant></app-scheduling-assistant>
+    </div>
+  </div>
+  <br>
+</div>

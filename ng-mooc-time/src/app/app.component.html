@@ -1,4 +1,5 @@
 <div class="container">
+    <ng4-loading-spinner> </ng4-loading-spinner>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" routerLink="/">MOOCTime</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -7,9 +8,12 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
+        <li class="nav-item" [routerLinkActive]="['active']">
           <a class="nav-link" routerLink="/courses">Courses</a>
         </li>
+        <li class="nav-item" [routerLinkActive]="['active']">
+            <a class="nav-link" routerLink="/work-list/">My Work</a>
+          </li>
       </ul>
     </div>
   </nav>

@@ -6,28 +6,28 @@ from rest_framework import serializers
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = User
-        fields = ('url', 'username', 'email', 'groups')
+        fields = ('id', 'url', 'username', 'email', 'groups')
 
 
 class GroupSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Group
-        fields = ('url', 'name')
+        fields = ('id', 'url', 'name')
 
 
 class CourseSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Course
-        fields = ('name', 'start_date', 'end_date', 'calendar_url')
+        fields = ('id', 'name', 'start_date', 'end_date', 'calendar_url', 'course_code')
 
 
-class WorkSerializer(serializers.HyperlinkedModelSerializer):
+class WorkSerializer(serializers.ModelSerializer):
     class Meta:
         model = Work
-        fields = ('course', 'work_type', 'due_date')
+        fields = ('id', 'course', 'name', 'work_type', 'due_date', 'estimated_time', 'url', 'description')
 
 
-class IntervalSessionSerializer(serializers.HyperlinkedModelSerializer):
+class IntervalSessionSerializer(serializers.ModelSerializer):
     class Meta:
         model = IntervalSession
-        fields = ('work', 'start', 'end')
+        fields = ('id', 'work', 'start', 'end')

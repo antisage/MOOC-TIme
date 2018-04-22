@@ -1,7 +1,11 @@
+<br>
 <div *ngFor="let course of courses">
-  <h3>{{ course.name }}</h3>
-  <p>Course code: {{ course.course_code }}</p>
-  <p>Start Date: {{ course.start_date }}</p>
-  <p>End Date: {{ course.end_date }}</p>
-  <p>Calendar URL: {{ course.calendar_url }}</p>
+  <div class="card">
+    <h5 class="card-header">{{ course.name }} [{{ course.course_code }}]</h5>
+    <div class="card-body">
+      <p class="card-text">{{ course.start_date | date }} - {{ course.end_date | date }}</p>
+      <a href="/work-list/{{ course.id }}" class="btn btn-primary">View Work</a>
+    </div>
+  </div>
+  <br>
 </div>
