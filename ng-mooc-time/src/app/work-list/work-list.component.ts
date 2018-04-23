@@ -14,6 +14,8 @@ export class WorkListComponent implements OnInit {
   courseId: number;
   work: Work[];
   editing: number;
+  downloadUrl: string;
+  showCalendar: boolean;
 
   constructor(
     private mooctimeService: MooctimeService,
@@ -26,12 +28,17 @@ export class WorkListComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.downloadUrl = this.mooctimeService.getCalendar(this.courseId);
     this.mooctimeService.getWorkList(this.courseId)
       .subscribe(work => this.work = work);
   }
 
   click(event, workId) {
     this.editing = workId;
+  }
+
+  showCalendarUrl() {
+    this.showCalendar = true;
   }
 
 }

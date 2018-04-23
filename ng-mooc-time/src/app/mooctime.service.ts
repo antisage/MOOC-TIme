@@ -70,4 +70,8 @@ export class MooctimeService {
     return this.http.post<Session>(this.apiBaseUrl + this.sessionUrl, serialSession, httpOptions);
   }
 
+  getCalendar(courseId: number): string {
+    return this.apiBaseUrl + 'generate-calendar/?course_id=' + courseId;
+  }
+
 }

@@ -18,7 +18,7 @@ class CalendarParse:
                     v = v.from_ical(v)
                 if str(k) == 'SUMMARY':
                     event['name'] = v
-                if str(k) == 'DTSTAMP':
+                if str(k) == 'DTSTART':
                     event['duedate'] = v
                 if str(k) == 'DESCRIPTION':
                     event['description'] = v

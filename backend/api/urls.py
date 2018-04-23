@@ -2,7 +2,7 @@ from django.conf.urls import url, include
 from django.urls import path
 from rest_framework import routers
 from api import views
-from .views import get_possible_work_events
+from .views import get_possible_work_events, get_calendar
 from rest_framework.schemas import get_schema_view
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
@@ -37,4 +37,5 @@ urlpatterns = [
     url(r'^echo/$', EchoView.as_view()),
 
     path('course/calendar-events/<int:id>/', get_possible_work_events),
+    path('generate-calendar/', get_calendar),
 ]

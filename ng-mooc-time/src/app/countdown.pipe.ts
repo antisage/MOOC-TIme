@@ -8,7 +8,7 @@ export class CountdownPipe implements PipeTransform {
   transform(value: any, args?: any): any {
     const now = new Date();
     const target = new Date(value);
-    return Math.round((+now - +target)/(1000*60*60*24));;
+    return (-1 * Math.round((+now - +target)/(1000*60*60*24)));
   }
 
 }

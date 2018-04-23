@@ -31,8 +31,8 @@ export class SchedulingAssistantComponent implements OnInit {
   addSession(duration: string) {
     const session: Session = {
       work: this.workId,
-      start: new Date(this.start.year, this.start.month, this.start.day, this.time.hour, this.time.minute),
-      end: new Date(this.start.year, this.start.month, this.start.day, this.time.hour + parseInt(duration), this.time.minute)
+      start: new Date(this.start.year, this.start.month-1, this.start.day, this.time.hour, this.time.minute),
+      end: new Date(this.start.year, this.start.month-1, this.start.day, this.time.hour + parseInt(duration), this.time.minute)
     }
     this.moocService.addSession(session).subscribe();
     this.scheduledHours += parseInt(duration);

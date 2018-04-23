@@ -8,7 +8,7 @@
       <div class="card-body">
         <h5 class="card-title">{{ item.name }}</h5>
         <p class="card-text">{{ item.description }}</p>
-        <p>We recommend scheduling at least {{ item.estimated_time * 2 }} hours to complete this task</p>
+        <p style="color:crimson;">We recommend scheduling at least {{ item.estimated_time * 2 }} hours to complete this task</p>
         <button class="btn btn-primary" (click)="click($event, item.id)">Schedule sessions</button>
         <app-scheduling-assistant *ngIf="editing == item.id" [workId]="item.id"></app-scheduling-assistant>
       </div>
@@ -17,4 +17,9 @@
       </div>
     </div>
     <br>
+</div>
+<div class="row align-items-end">
+  <div class="col">
+    <a class="btn btn-success" download href="{{ downloadUrl }}">Export Calendar</a>
+  </div>
 </div>

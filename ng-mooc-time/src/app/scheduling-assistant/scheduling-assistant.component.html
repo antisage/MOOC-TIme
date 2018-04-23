@@ -12,12 +12,14 @@
       </div>
     </div>
   </div>
-  <div class="form-group col-md-3">
-    <ngb-timepicker name="time" [(ngModel)]="time" [meridian]="meridian"></ngb-timepicker>
-  </div>
   <div class="form-group col-md-2">
     <label for="hours">Duration (hours)</label>
     <input #hours type="number" class="form-control" id="hours" value="1">
+  </div>
+</div>
+<div class="row">
+  <div class="form-group col-md-3">
+    <ngb-timepicker name="time" [(ngModel)]="time" [meridian]="meridian"></ngb-timepicker>
   </div>
 </div>
 <div class="row">
