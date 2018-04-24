@@ -7,13 +7,24 @@ from api.serializers import UserSerializer, \
                             CourseSerializer, \
                             WorkSerializer, \
                             IntervalSessionSerializer
-from django.http import JsonResponse
+from django.http import JsonResponse, FileResponse
+
 
 
 def get_possible_work_events(request, id):
     print(id)
     target_course = Course.objects.get(id=id)
-    return JsonResponse(target_course.get_possible_events())
+    return JsonResponse(target_course.get_possible_events(), safe=False)
+
+
+def get_calendar(request):
+    course_id = request.GET['course_id']
+    if course_id is not None:
+        course = Course.objects.all().filter(id=course_id)
+        print(course)
+        response = FileResponse(open(course[0].get_calendar(), 'rb'))
+        response['Content-Disposition'] = 'attachment; filename="MOOCCalendar.ics"'
+        return response
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -38,8 +49,15 @@ class CourseViewSet(viewsets.ModelViewSet):
 
 
 class WorkViewSet(viewsets.ModelViewSet):
-    queryset = Work.objects.all()
     serializer_class = WorkSerializer
+
+    
+    def get_queryset(self):
+        queryset = Work.objects.all().order_by('due_date')
+        course_id = self.request.query_params.get('course_id', None)
+        if course_id is not None:
+            queryset = queryset.filter(course__id=course_id)
+        return queryset
 
 
 class IntervalSessionViewSet(viewsets.ModelViewSet):

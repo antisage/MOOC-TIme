@@ -2,7 +2,7 @@ from django.conf.urls import url, include
 from django.urls import path
 from rest_framework import routers
 from api import views
-from .views import get_possible_work_events
+from .views import get_possible_work_events, get_calendar
 from rest_framework.schemas import get_schema_view
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
@@ -15,9 +15,9 @@ from rest_framework.response import Response
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register(r'groups', views.GroupViewSet)
-router.register(r'courses', views.CourseViewSet)
-router.register(r'works', views.WorkViewSet)
-router.register(r'interval-sessions', views.IntervalSessionViewSet)
+router.register(r'courses', views.CourseViewSet, base_name='courses')
+router.register(r'works', views.WorkViewSet, base_name='works')
+router.register(r'interval-sessions', views.IntervalSessionViewSet, base_name='interval_sessions')
 
 class MessageSerializer(serializers.Serializer):
     message = serializers.CharField()
@@ -37,4 +37,5 @@ urlpatterns = [
     url(r'^echo/$', EchoView.as_view()),
 
     path('course/calendar-events/<int:id>/', get_possible_work_events),
+    path('generate-calendar/', get_calendar),
 ]

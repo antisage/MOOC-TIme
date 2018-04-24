@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
+import { Ng4LoadingSpinnerService } from 'ng4-loading-spinner';
 
 import { MooctimeService } from '../mooctime.service';
 import { Course } from '../course';
@@ -16,16 +18,23 @@ export class SetupComponent implements OnInit {
   startDate: NgbDateStruct;
   endDate;
 
-  result: Course;
-
-  constructor(private mooctimeService: MooctimeService) { }
+  constructor(
+    private mooctimeService: MooctimeService,
+    private spinnerService: Ng4LoadingSpinnerService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
   }
 
-  add(name: string, 
-      courseCode: string,
-      courseUrl: string): void {
+  finish(course): void {
+    console.log(course);
+    this.spinnerService.hide();
+    this.router.navigateByUrl('/work_form?id=' + course.id); 
+  }
+
+  add(name: string, courseCode: string, courseUrl: string): void {
+    this.spinnerService.show();
     name = name.trim();
     if (!name) { return; }
     courseCode = courseCode.trim();
@@ -38,11 +47,8 @@ export class SetupComponent implements OnInit {
       calendar_url: courseUrl
     }
 
-    const x = this.mooctimeService.addCourse(course as Course)
-      .subscribe(course => {
-        this.result = course;
-      });
-    console.log(x);
+    this.mooctimeService.addCourse(course as Course)
+      .subscribe(course => this.finish(course));
   }
 
 }
