@@ -1,0 +1,26 @@
+body {
+    margin: 15px;
+    font-family: helvetica, arial, sans-serif;
+    font-size: 13px;
+}
+
+#header {
+    padding: 1em;
+    padding-bottom: 2em;
+}
+
+#header h1 {
+    display: inline;
+    font-size: 156%;
+    padding-bottom: 43px;
+    padding-left: 75px;
+    padding-top: 30px;
+    background: url(icon_128.png) no-repeat;
+    background-size: 50px;
+    background-position: 1px 18px;
+}
+
+#settings {
+    margin: 6px 6px 0 6px;
+    -webkit-border-radius: 5px 5px;
+}
